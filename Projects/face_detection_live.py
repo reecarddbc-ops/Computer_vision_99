@@ -1,11 +1,11 @@
 import cv2 as cv
 
-face_capture=cv.CascadeClassifier("C:/Users/REECARD/AppData/Local/Python/pythoncore-3.14-64/Lib/site-packages/cv2/data/haarcascade_frontalface_default.xml")
+face_capture=cv.CascadeClassifier("C:/Users/REECARD/AppData/Local/Python/pythoncore-3.14-64/Lib/site-packages/cv2/data/haarcascade_frontalface_default.xml") #Loads a pre-trained model to detect faces
 cam = cv.VideoCapture(0)
 
 while True:
     isture,video=cam.read()
-    col = cv.cvtColor(video, cv.COLOR_BGR2GRAY)
+    col = cv.cvtColor(video, cv.COLOR_BGR2GRAY)   #Converts image to grayscale ,Face detection works better & faster on gray images
     faces = face_capture.detectMultiScale(
         col,
         scaleFactor=1.1,
